@@ -3,7 +3,7 @@ This webcrawler is designed to iterate through BoxOfficeMojo's weekly boxoffice 
 
 At the time of publication, all sites scraped permit webscrapers in all areas navigated by this scraper.
 
-<aside align="center">This project requires a selenium driver for your chrome version. See https://selenium-python.readthedocs.io/installation.html#drivers for more information</aside>
+<kbd><aside align="center">This project requires a selenium driver for your chrome version. See https://selenium-python.readthedocs.io/installation.html#drivers for more information</aside></kbd>
 
 ## About BoxOfficeMojo
 Box Office Mojo has a plethora of movie information; box office charts ranging from daily to yearly performances. The database structure from which they've 
@@ -12,7 +12,7 @@ dynamically created their website makes their information very accessible to web
 ## About IMDB.com
 IMDB is a popular online database of information on movies, tv, etc. They describe themselves as "...the world's most popular and authoritative source..." for said content. 
 
-<aside align="center">IMDB has a paid version which advertises access to box office data, however as you'll see all of this data is freely available and readily aggregated from their very own sites</aside>
+<kbd><aside align="center">IMDB has a paid version which advertises access to box office data, however as you'll see all of this data is freely available and readily aggregated from their very own sites</aside></kbd>
 
 ## run.py
 run.py imports the WeeklyCharts class from Scraping/boxofficeweekly.py and opens it with the syntax '''with WeeklyCharts(start=year.week, stop=year.week) as bot:'''. The crawl method is 
