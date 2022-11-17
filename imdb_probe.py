@@ -14,7 +14,7 @@ class Boxy(webdriver.Chrome):
         options = webdriver.ChromeOptions()
         options.add_experimental_option('excludeSwitches', ['enable-logging'])
         super(Boxy, self).__init__(options=options)
-        self.implicitly_wait(10)
+        self.implicitly_wait(2)
 
     def __enter__(self):
         return self 
@@ -70,3 +70,16 @@ class Boxy(webdriver.Chrome):
     def get_gross_international(self):
         pass
 
+    def scroll_down(self):
+        if not self.find_element(By.CSS_SELECTOR,
+                'section[data-testid="BoxOffice"]'):
+            last_height = self.execute_script('return document.body.scrollHeight')
+            while True:
+                self.execute_script('window.scrollTo(0, document.body.scrollHeight);')
+                # wait to load page
+                print(self.find_element(By.CSS_SELECTOR,
+                    'section[data-testid="BoxOffice"]'))
+                new_height = self.execute_script('return document.body.scrollHeight')
+                if new_height == last_height:
+                    break
+                last_height = new_height
